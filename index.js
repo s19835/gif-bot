@@ -16,6 +16,8 @@ const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits
 //Loading command files into client
 if (commands.data == true && commands.interaction == true) {
     client.commands = commands;
+} else {
+    console.log("[WARNING] missing values in commands");
 }
 
 
