@@ -2,6 +2,7 @@
 Practice Project for Self-learning, a discord bot that provide gif from the query
 
 ## Documentation for the Project
+site: https://marianiranjan.notion.site/GIF-Discord-Bot-7f952b82e897494389704f093ed4bcba?pvs=4
 
 # GIF Discord Bot
 
