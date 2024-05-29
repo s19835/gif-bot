@@ -7,7 +7,7 @@ config();
 const command = [];
 
 if ('data' in commands && 'execute' in commands) {
-    command.push(commands.data);
+    command.push(commands.data.toJSON());
     //console.log(command);
 } else {
     console.log("[WARNING] command not found");
@@ -23,13 +23,13 @@ const rest = new REST().setToken(process.env.TOKEN);
     try {
         console.log(`Started refreshing ${command.length} application commands.`);
 
-        const data = await rest.put(Routes.applicationGuildCommand(process.env.CLIENTID, process.env.SEVERID), {body: command});
+        const data = await rest.put(Routes.applicationGuildCommands(process.env.CLIENTID, process.env.SEVERID), {body: command}, );
         //console.log(data);
 
         console.log(`Successfully reloaded ${data.length} application (/) commands.`);
     } catch (error) {
         console.error(error);
     }
-});
+})();
 
 //console.error("This is an error!");
