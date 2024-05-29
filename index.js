@@ -43,7 +43,7 @@ client.on(Events.InteractionCreate, async interaction => {
 
     if(interaction.commandName !== 'giphy') {
         return;
-    }
+    } // no need for single command file
 
     try {
         await commands.execute(interaction); // initial error I added command instead of commands
