@@ -27,21 +27,26 @@ client.once(Events.ClientReady, readyClient => {
 
 client.login(process.env.TOKEN);
 
+
 //set of process need to happen when client is in online and in interaction with the user
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return; //differ from usual message and slash-commands
 	
     //check the user triggered command in the commands data, if there is a vlaue save it to command var
-    const command = interaction.client.commands.get(interaction.commandName);
+    //const command = interaction.client.commands.get(interaction.commandName);
 
     //if there is no matching commands found then vlaue of command is not exists
-    if(!command) {
-        console.log("No matching commands found!");
+    //if(!command) {
+   //     console.log("No matching commands found!");
+    //    return;
+   // }
+
+    if(interaction.commandName !== 'giphy') {
         return;
     }
 
     try {
-        await command.execute(interaction);
+        await commands.execute(interaction); // initial error I added command instead of commands
     } catch (error) {
         console.error(error);
     }

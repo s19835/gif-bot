@@ -5,5 +5,5 @@ export const data = new SlashCommandBuilder().setName("giphy").setDescription("i
 
 //need to modify this to provide a gif from the query word (data)
 export async function execute(interaction) {
-	await interaction.reply('Pong!')
+    await interaction.reply("pong");
 }
